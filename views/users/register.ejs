@@ -1,0 +1,41 @@
+<% layout('./layouts/styles')%>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="row w-100">
+    <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+      <div class="card shadow">
+        <img crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY-BLhHAJea-wjuOlSTr_0p1bxjzlYFdUowQ&s" alt="Login Image" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Register</h3>
+
+          <form action="/register" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+              <div class="invalid-feedback">
+                Please enter a valid username.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+              <div class="invalid-feedback">
+                Please enter a valid password.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

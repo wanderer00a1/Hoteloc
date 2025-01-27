@@ -1,0 +1,33 @@
+
+<% layout('./layouts/styles')%>
+<div id="cluster-map"></div>
+<h1>All Hotels</h1>
+  
+<% for(let hotel of hotels){ %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <% if(hotel.images.length) {%>
+                <img crossorigin="anonymous" src="<%=hotel.images[0].url %>" alt="" class="img-fluid">
+                <% }else{ %>
+                <img crossorigin="anonymous" src="https://www.google.com/imgres?q=hotel%20unsplash&imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1541971875076-8f970d573be6%3Ffm%3Djpg%26q%3D60%26w%3D3000%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsfGVufDB8fDB8fHww&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel&docid=iMEQ4vPywWmruM&tbnid=vI928obTyVWE-M&vet=12ahUKEwjNmrir842LAxWvV2wGHXcgK14QM3oECFwQAA..i&w=3000&h=2250&hcb=2&ved=2ahUKEwjNmrir842LAxWvV2wGHXcgK14QM3oECFwQAA" alt="">
+                <% } %>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%=hotel.title%></h5>
+                    <p class="card-text"><%=hotel.description%></p>
+                    <p class="card-text"><small class="text-muted"><%=hotel.location%></small></p>
+                    <a class="btn btn-primary" href="/hotels/<%=hotel._id %>">View <%= hotel.title %></a>
+                </div>
+            </div>
+        </div>
+    </div>        
+<% } %>
+
+<script>
+  const maptilerApiKey = '<%- process.env.MAPTILER_TOKEN %>';
+  const hotels = { features:<%-JSON.stringify(hotels) %>}
+</script>
+    
+<script src="/js/clusterMap.js"></script>

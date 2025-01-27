@@ -1,0 +1,31 @@
+<% layout('./layouts/styles')%>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="row w-100">
+    <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+      <div class="card shadow">
+        <img crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDnrwbPjEBWpR5rJnZlaNIbLe-0svZ1jwSSg&s" alt="Login Image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title text-center">Login</h5>
+
+          <form action="/login" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required autofocus>
+              <div class="invalid-feedback">
+                Please enter your username.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+              <div class="invalid-feedback">
+                Please enter your password.
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Log In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
