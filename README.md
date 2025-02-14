@@ -1,1 +1,0 @@
-# Hoteloc-test
