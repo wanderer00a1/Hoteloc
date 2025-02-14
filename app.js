@@ -134,6 +134,7 @@ passport.deserializeUser(User.deserializeUser());
 //The below block of code allows us to use currentUser,success,error in any ejs file.
 app.use((req,res,next) =>{
   res.locals.CurrentUser = req.user; 
+
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();
