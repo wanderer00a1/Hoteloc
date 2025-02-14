@@ -95,7 +95,9 @@ app.use(
                "data:",
                "https://res.cloudinary.com/dl13fjvsp/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                "https://images.unsplash.com/",
-               "https://encrypted-tbn0.gstatic.com/"
+               "https://encrypted-tbn0.gstatic.com/",
+               "https://api.maptiler.com/"
+
            ],
            fontSrc: ["'self'", ...fontSrcUrls],
        },
