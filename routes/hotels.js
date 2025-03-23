@@ -23,7 +23,7 @@ router.route('/:id')
   .get(hotels.show)
   .put(isLoggedin,isAuthor, upload.array('image'), validateSchema, hotels.edit )
   .delete(isLoggedin, isAuthor, hotels.delete);
-  // if new is here then it will be like uk ^(order matters)
+
   
 router.get('/:id/edit', isLoggedin, isAuthor, hotels.renderEdit);
 
