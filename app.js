@@ -30,8 +30,7 @@ main().catch(err =>{
 
 async function main() {
   await mongoose.connect(dburl);
-    console.log("Connected")
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+    console.log("Connected");
 }
 
 app.set('view engine','ejs');
@@ -111,7 +110,7 @@ const sessionConfig  = {
   saveUninitialized:true,
   cookie:{
     httpOnly:true,
-    // secure:true,
+    secure:true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7
   }
@@ -131,7 +130,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-//The below block of code allows us to use currentUser,success,error in any ejs file.
 app.use((req,res,next) =>{
   res.locals.CurrentUser = req.user; 
 
